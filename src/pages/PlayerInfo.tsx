@@ -35,7 +35,11 @@ const PlayerInfo: React.FC = () => {
     queryFn: () => fetchPlayerInfo(playerId),
     enabled: shouldFetch && !!playerId,
     staleTime: 60000,
-    onSettled: () => {
+    // Removed onSettled and replaced with onSuccess and onError
+    onSuccess: () => {
+      setShouldFetch(false);
+    },
+    onError: () => {
       setShouldFetch(false);
     }
   });
