@@ -8,6 +8,27 @@ export interface PlayerBasicInfo {
   likes: number;
   name: string;
   server: string;
+  language?: string;
+  preferred_mode?: string;
+  last_login?: string;
+  credit_score?: number;
+  rank?: {
+    br: {
+      current: number;
+      max: number;
+      points: number;
+    };
+    cs: {
+      current: number;
+      max: number;
+      points: number;
+    };
+  };
+  release_version?: string;
+  equipment?: {
+    weapon: number[];
+    outfit: number[];
+  };
 }
 
 export interface ClanLeader {
@@ -25,12 +46,23 @@ export interface ClanInfo {
   level: number;
   members_count: number;
   name: string;
+  capacity?: number;
+}
+
+export interface PetInfo {
+  id: number;
+  exp: number;
+  level: number;
+  skin_id: number;
+  selected: boolean;
+  skill_id: number;
 }
 
 export interface PlayerData {
   animal: any | null;
   basic_info: PlayerBasicInfo;
-  clan: ClanInfo;
+  clan: ClanInfo | null;
+  pet?: PetInfo | null;
 }
 
 export interface PlayerInfoResponse {
