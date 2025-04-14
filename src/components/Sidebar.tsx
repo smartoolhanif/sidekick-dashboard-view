@@ -7,8 +7,8 @@ import {
   FileCog, 
   ChevronDown, 
   ChevronUp, 
-  Menu,
-  X
+  X,
+  Database
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
@@ -19,8 +19,8 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
-  const [apisOpen, setApisOpen] = useState(false);
-  const [toolsOpen, setToolsOpen] = useState(false);
+  const [apisOpen, setApisOpen] = useState(true);
+  const [toolsOpen, setToolsOpen] = useState(true);
 
   const toggleApis = () => setApisOpen(!apisOpen);
   const toggleTools = () => setToolsOpen(!toolsOpen);
@@ -62,7 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
               className="w-full flex items-center justify-between px-4 py-3 text-white bg-freefire-purple hover:bg-freefire-purple/90 rounded-md"
             >
               <div className="flex items-center gap-3">
-                <FileCog size={20} />
+                <Database size={20} />
                 <span>APIs</span>
               </div>
               {apisOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}

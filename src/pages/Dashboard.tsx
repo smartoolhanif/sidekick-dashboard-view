@@ -50,11 +50,16 @@ const Dashboard: React.FC = () => {
 
             {/* Available Tools */}
             <div className="space-y-4">
-              <h2 className="text-xl font-bold text-white">Available Tools</h2>
+              <div className="flex items-center gap-2">
+                <h2 className="text-xl font-bold text-white">Available Tools</h2>
+                <div className="inline-flex items-center justify-center bg-freefire-purple-dark/50 text-gray-300 text-xs px-2 py-1 rounded-md">
+                  Keyboard Shortcuts
+                </div>
+              </div>
               <p className="text-gray-300">Currently 3 tools available in the dashboard</p>
 
               <div className="flex flex-col gap-3 py-2">
-                {/* Tool Cards */}
+                {/* Ban Checker */}
                 <div className="grid">
                   <ToolCard 
                     title="Ban Checker" 
@@ -64,6 +69,7 @@ const Dashboard: React.FC = () => {
                   />
                 </div>
 
+                {/* Guest Combiner */}
                 <div className="grid">
                   <ToolCard 
                     title="Guest Combiner" 
@@ -73,6 +79,7 @@ const Dashboard: React.FC = () => {
                   />
                 </div>
 
+                {/* Player Info */}
                 <Link to="/player-info" className="grid">
                   <ToolCard 
                     title="Player Info" 
