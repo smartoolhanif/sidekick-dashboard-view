@@ -4,6 +4,7 @@ import { Menu } from 'lucide-react';
 import Sidebar from '@/components/Sidebar';
 import ToolCard from '@/components/ToolCard';
 import { ShieldIcon, UserIcon, FileIcon } from '@/components/ToolIcons';
+import { Link } from 'react-router-dom';
 
 const Dashboard: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -72,14 +73,14 @@ const Dashboard: React.FC = () => {
                   />
                 </div>
 
-                <div className="grid">
+                <Link to="/player-info" className="grid">
                   <ToolCard 
                     title="Player Info" 
                     description="Get detailed information about a Free Fire player" 
                     icon={<UserIcon />}
                     shortcutKey="P"
                   />
-                </div>
+                </Link>
               </div>
             </div>
 

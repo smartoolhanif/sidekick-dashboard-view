@@ -11,6 +11,7 @@ import {
   X
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -46,13 +47,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
 
         {/* Menu Items */}
         <div className="flex-1 overflow-y-auto py-2 space-y-1">
-          <a 
-            href="/" 
+          <Link 
+            to="/" 
             className="flex items-center gap-3 px-4 py-3 text-white bg-freefire-green hover:bg-freefire-green/90 rounded-md mx-2"
           >
             <Home size={20} />
             <span>Dashboard</span>
-          </a>
+          </Link>
 
           {/* APIs Dropdown */}
           <div className="px-2">
@@ -69,14 +70,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
 
             {apisOpen && (
               <div className="ml-2 mt-1 space-y-1">
-                <a href="#" className="flex items-center gap-3 px-4 py-2 text-white hover:bg-freefire-purple-dark/30 rounded-md">
+                <Link to="/player-info" className="flex items-center gap-3 px-4 py-2 text-white hover:bg-freefire-purple-dark/30 rounded-md">
                   <User size={18} />
                   <span>Player Info</span>
-                </a>
-                <a href="#" className="flex items-center gap-3 px-4 py-2 text-white hover:bg-freefire-purple-dark/30 rounded-md">
+                </Link>
+                <Link to="#" className="flex items-center gap-3 px-4 py-2 text-white hover:bg-freefire-purple-dark/30 rounded-md">
                   <ShieldAlert size={18} />
                   <span>Ban Checker</span>
-                </a>
+                </Link>
               </div>
             )}
           </div>
@@ -96,10 +97,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
 
             {toolsOpen && (
               <div className="ml-2 mt-1 space-y-1">
-                <a href="#" className="flex items-center gap-3 px-4 py-2 text-white hover:bg-freefire-purple-dark/30 rounded-md">
+                <Link to="#" className="flex items-center gap-3 px-4 py-2 text-white hover:bg-freefire-purple-dark/30 rounded-md">
                   <FileCog size={18} />
                   <span>Guest Combiner</span>
-                </a>
+                </Link>
               </div>
             )}
           </div>
