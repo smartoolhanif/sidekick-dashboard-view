@@ -3,12 +3,17 @@ import { PlayerInfoResponse } from "@/types/playerInfo";
 
 export const fetchPlayerInfo = async (playerId: string, region: string): Promise<PlayerInfoResponse> => {
   try {
-    // Use the new API endpoint
+    // Direct API endpoint without proxy
     const apiUrl = `https://ariiflexlabs-playerinfo-icxc.onrender.com/ff_info?uid=${playerId}&region=${region.toLowerCase()}`;
     
     console.log('Fetching player info from:', apiUrl);
     
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
     
     if (!response.ok) {
       const errorText = await response.text();
